@@ -74,12 +74,15 @@ public class PlayerMovement : MonoBehaviour
     void handleAnimations(bool isMoving) {
         if (isMoving) {
             animator.SetBool("isWalking", true);
-        } 
-        else {
+        } else {
             animator.SetBool("isWalking", false);
         }
 
-        animator.SetBool("isRunning", isSprinting);
+        if(isMoving && isSprinting) {
+            animator.SetBool("isRunning", true);
+        } else {
+            animator.SetBool("isRunning", false);
+        }
     }
 
     void SprintStart(InputAction.CallbackContext context) {
