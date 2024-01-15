@@ -9,13 +9,17 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] float moveSpeed = 5f;
+    [SerializeField] float sprintSpeed = 10f;
     [SerializeField] float rotationSpeed = 5f;
     Vector2 moveDirection = Vector2.zero;
     Animator animator;
 
     PlayerInput playerControls;
     InputAction move;
+    InputAction sprint;
     InputAction fire;
+
+    bool isSprinting = false;
 
 
 
@@ -27,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
     void OnEnable() {
         move = playerControls.Player.Move;
         move.Enable();
+
+        sprint = playerControls.Player.Sprint;
+        sprint.Enable();
+        sprint.performed += SprintStart;
+        sprint.canceled += SprintEnd;
 
         fire = playerControls.Player.Fire;
         fire.Enable();
@@ -42,11 +51,13 @@ public class PlayerMovement : MonoBehaviour
         handleMovement();
     }
 
-    void handleMovement() {
+    void handleMovement() { 
         moveDirection = move.ReadValue<Vector2>();
 
+        float currentSpeed = isSprinting ? sprintSpeed : moveSpeed;
+
         Vector3 newPosition = transform.position +
-            new Vector3(moveDirection.x, 0, moveDirection.y) * moveSpeed * Time.deltaTime;
+            new Vector3(moveDirection.x, 0, moveDirection.y) * currentSpeed * Time.deltaTime;
 
         transform.position = newPosition;
 
@@ -67,6 +78,16 @@ public class PlayerMovement : MonoBehaviour
         else {
             animator.SetBool("isWalking", false);
         }
+
+        animator.SetBool("isRunning", isSprinting);
+    }
+
+    void SprintStart(InputAction.CallbackContext context) {
+        isSprinting = true;
+    }
+
+    void SprintEnd(InputAction.CallbackContext context) {
+        isSprinting = false;
     }
 
     void Fire(InputAction.CallbackContext context) {
