@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.name == "Cube")
+        if(collision.gameObject.name == "Player")
         {
             player = collision.gameObject;
             Vector3 targetPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
