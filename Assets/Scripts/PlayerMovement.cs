@@ -11,8 +11,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float rotationSpeed = 5f;
     Vector2 moveDirection = Vector2.zero;
+    Animator animator;
 
-    [SerializeField] PlayerInput playerControls;
+    PlayerInput playerControls;
     InputAction move;
     InputAction fire;
 
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake() {
         playerControls = new PlayerInput();
+        animator = GetComponent<Animator>();
     }
 
     void OnEnable() {
@@ -51,6 +53,19 @@ public class PlayerMovement : MonoBehaviour
         if (moveDirection != Vector2.zero) {
             Quaternion targetRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.y));
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+
+        bool isMoving = moveDirection.magnitude > 0.1f;
+        handleAnimations(isMoving);
+
+    }
+
+    void handleAnimations(bool isMoving) {
+        if (isMoving) {
+            animator.SetBool("isWalking", true);
+        } 
+        else {
+            animator.SetBool("isWalking", false);
         }
     }
 

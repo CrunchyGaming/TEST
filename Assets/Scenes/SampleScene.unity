@@ -1821,7 +1821,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148293636492}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 78418f8a9bde6354483abf686b9d250c, type: 3}
   m_Controller: {fileID: 9100000, guid: 7dcf140392269d9429446b3aa263b8f0, type: 2}
   m_CullingMode: 1
@@ -1904,6 +1904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  rotationSpeed: 5
 --- !u!4 &5901452234379123125
 Transform:
   m_ObjectHideFlags: 0
