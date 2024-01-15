@@ -94,7 +94,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Fire(InputAction.CallbackContext context) {
+        animator.SetTrigger("Attack");
         Debug.Log("Fired");
+        //animator.ResetTrigger("Attack");
     }
 
 }
