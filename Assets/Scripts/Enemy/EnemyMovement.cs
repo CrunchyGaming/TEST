@@ -5,10 +5,14 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
 
+    [Header("Settings")]
+    [SerializeField] float enemySpeed = 3f;
+    [SerializeField] float minPlayerDistance = 1.5f;
+    [SerializeField] float damageAmount = 10;
     GameObject player;
-    float enemySpeed = 3f;
     Vector3 targetPos;
-    float minPlayerDistance = 1.5f;
+    
+
 
     void Start()
     {
@@ -36,4 +40,5 @@ public class EnemyMovement : MonoBehaviour
             transform.position = transform.position + (transform.forward * enemySpeed) * Time.deltaTime;
         }
     }
+
 }
