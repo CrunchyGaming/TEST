@@ -10,13 +10,13 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float minPlayerDistance = 1.5f;
     [SerializeField] float damageAmount = 10;
     GameObject player;
+    Animator animator;
     Vector3 targetPos;
-    
 
 
-    void Start()
-    {
-        //enemySpeed = 1f;
+
+    void Start() {
+        animator = GetComponent<Animator>();    
     }
 
     void OnCollisionStay(Collision collision)
@@ -27,6 +27,7 @@ public class EnemyMovement : MonoBehaviour
             player = collision.gameObject;
             Vector3 targetPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
             transform.LookAt(targetPos);
+
             MoveEnemy();
         }
         
@@ -38,6 +39,13 @@ public class EnemyMovement : MonoBehaviour
         if(playerDistance > minPlayerDistance)
         {
             transform.position = transform.position + (transform.forward * enemySpeed) * Time.deltaTime;
+        }
+
+        if(playerDistance <= minPlayerDistance) 
+        {
+            animator.SetBool("attack", true);
+        } else {
+            animator.SetBool("attack", false);
         }
     }
 
