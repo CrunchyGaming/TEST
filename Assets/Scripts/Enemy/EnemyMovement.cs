@@ -6,17 +6,19 @@ public class EnemyMovement : MonoBehaviour
 {
 
     GameObject player;
-    float enemySpeed;
+    float enemySpeed = 3f;
     Vector3 targetPos;
+    float minPlayerDistance = 1.5f;
 
     void Start()
     {
-        enemySpeed = 1f;
+        //enemySpeed = 1f;
     }
 
     void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.name == "Player")
+
+        if(collision.gameObject.GetComponent<PlayerMovement>() != null)
         {
             player = collision.gameObject;
             Vector3 targetPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
@@ -28,6 +30,10 @@ public class EnemyMovement : MonoBehaviour
 
     void MoveEnemy()
     {
-        transform.position = transform.position + (transform.forward * enemySpeed) * Time.deltaTime;
+        float playerDistance = Vector3.Distance(gameObject.transform.position, player.transform.position);
+        if(playerDistance > minPlayerDistance)
+        {
+            transform.position = transform.position + (transform.forward * enemySpeed) * Time.deltaTime;
+        }
     }
 }
