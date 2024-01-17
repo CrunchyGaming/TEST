@@ -9,6 +9,17 @@ public class PlayerHealth : MonoBehaviour
 
 
 
+    public void AddHealth(float health) {
+
+        if (playerHealth < 100) {
+            playerHealth += health;
+
+            // Cap the health at 100
+            playerHealth = Mathf.Min(playerHealth, 100f);
+        }
+
+    }
+
     public void TakeDamage(float damage) {
 
         playerHealth -= damage;

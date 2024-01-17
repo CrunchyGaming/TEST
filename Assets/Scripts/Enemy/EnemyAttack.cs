@@ -29,11 +29,9 @@ public class EnemyAttack : MonoBehaviour
             return;
         } else if (isBlocking == false) {
             playerHealth.TakeDamage(damageAmount);
-            Debug.Log("Do Damage");
         } else {
             return;
         }
-
     }
 
 }

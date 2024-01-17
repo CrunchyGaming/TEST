@@ -116,17 +116,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Fire(InputAction.CallbackContext context) {
-        UnityEngine.Debug.Log("Attacked");
     }
 
     void BlockStart(InputAction.CallbackContext context) {
         isBlocking = true;
-        UnityEngine.Debug.Log("Player started blocking");
     }
 
     void BlockEnd(InputAction.CallbackContext context) {
         isBlocking = false;
-        UnityEngine.Debug.Log("Player started blocking");
     }
 
 }
