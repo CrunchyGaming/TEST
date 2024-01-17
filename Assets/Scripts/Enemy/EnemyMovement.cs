@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class EnemyMovement : MonoBehaviour
     Animator animator;
     Vector3 targetPos;
 
+    NavMeshAgent agent;
+
 
 
     void Start() {
         animator = GetComponent<Animator>();    
+        agent = GetComponent<NavMeshAgent>();
     }
 
     /*void OnCollisionStay(Collision collision)
@@ -44,10 +48,11 @@ public class EnemyMovement : MonoBehaviour
         //
 
         float playerDistance = Vector3.Distance(gameObject.transform.position, player.transform.position);
-        if(playerDistance > minPlayerDistance)
-        {
-            transform.position = transform.position + (transform.forward * enemySpeed) * Time.deltaTime;
-        }
+        agent.destination = player.transform.position;
+        //if(playerDistance > minPlayerDistance)
+        //{
+        //    transform.position = transform.position + (transform.forward * enemySpeed) * Time.deltaTime;
+        //}
 
         if(playerDistance <= minPlayerDistance) 
         {
