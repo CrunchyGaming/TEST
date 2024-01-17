@@ -14,8 +14,8 @@ public class PlayerHealth : MonoBehaviour
     public void AddHealth(float health) {
 
         if (playerHealth < 100) {
-            UpdateHeatlhBar();
             playerHealth += health;
+            UpdateHeatlhBar();
 
             // Cap the health at 100
             playerHealth = Mathf.Min(playerHealth, 100f);
