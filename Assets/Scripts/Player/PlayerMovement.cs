@@ -12,20 +12,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float sprintSpeed = 10f;
     [SerializeField] float rotationSpeed = 5f;
     Vector2 moveDirection = Vector2.zero;
-    Animator animator;
+    bool isSprinting = false;
 
     PlayerInput playerControls;
     InputAction move;
     InputAction sprint;
     InputAction fire;
 
-    bool isSprinting = false;
-
 
 
     void Awake() {
         playerControls = new PlayerInput();
-        animator = GetComponent<Animator>();
     }
 
     void OnEnable() {
@@ -67,22 +64,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         bool isMoving = moveDirection.magnitude > 0.1f;
-        handleAnimations(isMoving);
 
-    }
-
-    void handleAnimations(bool isMoving) {
-        if (isMoving) {
-            animator.SetBool("isWalking", true);
-        } else {
-            animator.SetBool("isWalking", false);
-        }
-
-        if(isMoving && isSprinting) {
-            animator.SetBool("isRunning", true);
-        } else {
-            animator.SetBool("isRunning", false);
-        }
     }
 
     void SprintStart(InputAction.CallbackContext context) {
@@ -94,9 +76,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Fire(InputAction.CallbackContext context) {
-        animator.SetTrigger("Attack");
-        Debug.Log("Fired");
-        //animator.ResetTrigger("Attack");
+        Debug.Log("Attacked");
     }
 
 }
