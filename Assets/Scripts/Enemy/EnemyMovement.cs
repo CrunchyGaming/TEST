@@ -7,7 +7,6 @@ public class EnemyMovement : MonoBehaviour
 {
 
     [Header("Settings")]
-    [SerializeField] float enemySpeed = 3f;
     [SerializeField] float minPlayerDistance = 1.5f;
     [SerializeField] GameObject player;
     Animator animator;
