@@ -8,6 +8,7 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] float damageAmount = 40f;
     PlayerHealth playerHealth;
     PlayerMovement playerMovement;
+    bool isBlocking = false;
 
 
 
@@ -16,14 +17,21 @@ public class EnemyAttack : MonoBehaviour
         playerMovement = FindObjectOfType<PlayerMovement>();
     }
 
+    void Update() {
+        isBlocking = playerMovement.isBlocking;    
+    }
+
     //in attack animation (activates this)
     public void AttackHitEvent() {
         if (playerHealth == null) return;
 
-        if (playerMovement.isBlocking) {
+        if (isBlocking == true) {
             return;
-        } else {
+        } else if (isBlocking == false) {
             playerHealth.TakeDamage(damageAmount);
+            Debug.Log("Do Damage");
+        } else {
+            return;
         }
 
     }

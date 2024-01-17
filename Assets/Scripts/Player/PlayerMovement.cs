@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -18,19 +19,21 @@ public class PlayerMovement : MonoBehaviour
     CharacterController characterController;
     bool isSprinting = false;
     bool isCrouching = false;
-    public bool isBlocking = true;
+    public bool isBlocking { get; private set; }
 
     PlayerInput playerControls;
     InputAction move;
     InputAction sprint;
     InputAction crouch;
     InputAction fire;
+    InputAction block;
 
 
 
     void Awake() {
         playerControls = new PlayerInput();
         characterController = GetComponent<CharacterController>();
+        isBlocking = false;
     }
 
     void OnEnable() {
@@ -50,11 +53,19 @@ public class PlayerMovement : MonoBehaviour
         fire = playerControls.Player.Fire;
         fire.Enable();
         fire.performed += Fire;
+
+        block = playerControls.Player.Block;
+        block.Enable();
+        block.performed += BlockStart;
+        block.canceled += BlockEnd;
     }
 
     void OnDisable() {
         move.Disable();
+        sprint.Disable();
+        crouch.Disable();
         fire.Disable();
+        block.Disable();
     }
 
     void Update() {
@@ -77,7 +88,6 @@ public class PlayerMovement : MonoBehaviour
             Vector3 newPosition = transform.position +
                 new Vector3(moveDirection.x, 0, moveDirection.y) * currentSpeed * Time.deltaTime;
 
-        //transform.position = newPosition;
         characterController.SimpleMove((newPosition - transform.position) / Time.deltaTime);
 
         if (moveDirection != Vector2.zero) {
@@ -106,7 +116,17 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Fire(InputAction.CallbackContext context) {
-        Debug.Log("Attacked");
+        UnityEngine.Debug.Log("Attacked");
+    }
+
+    void BlockStart(InputAction.CallbackContext context) {
+        isBlocking = true;
+        UnityEngine.Debug.Log("Player started blocking");
+    }
+
+    void BlockEnd(InputAction.CallbackContext context) {
+        isBlocking = false;
+        UnityEngine.Debug.Log("Player started blocking");
     }
 
 }
