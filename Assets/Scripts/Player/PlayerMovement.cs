@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     CharacterController characterController;
     bool isSprinting = false;
     bool isCrouching = false;
+    public bool isBlocking = true;
 
     PlayerInput playerControls;
     InputAction move;
