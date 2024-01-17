@@ -7,7 +7,6 @@ public class EnemyMovement : MonoBehaviour
 {
 
     [Header("Settings")]
-    [SerializeField] float enemySpeed = 3f;
     [SerializeField] float minPlayerDistance = 1.5f;
     [SerializeField] GameObject player;
     Animator animator;
@@ -22,20 +21,6 @@ public class EnemyMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-    /*void OnCollisionStay(Collision collision)
-    {
-
-        if(collision.gameObject.GetComponent<PlayerMovement>() != null)
-        {
-            player = collision.gameObject;
-            Vector3 targetPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-            transform.LookAt(targetPos);
-
-            MoveEnemy();
-        }
-        
-    }*/
-
     void Update() {
         MoveEnemy();
     }
@@ -49,10 +34,6 @@ public class EnemyMovement : MonoBehaviour
 
         float playerDistance = Vector3.Distance(gameObject.transform.position, player.transform.position);
         agent.destination = player.transform.position;
-        //if(playerDistance > minPlayerDistance)
-        //{
-        //    transform.position = transform.position + (transform.forward * enemySpeed) * Time.deltaTime;
-        //}
 
         if(playerDistance <= minPlayerDistance) 
         {
