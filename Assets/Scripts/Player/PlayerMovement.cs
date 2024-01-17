@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float sprintSpeed = 10f;
     [SerializeField] float crouchSpeed = 2.5f;
     [SerializeField] float rotationSpeed = 5f;
+    [SerializeField] float playerDamage = 50f;
     Vector3 playerScale = new Vector3(1, 1, 1);
     Vector3 crouchScale = new Vector3(1, 0.5f, 1);
     Vector2 moveDirection = Vector2.zero;
@@ -116,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Fire(InputAction.CallbackContext context) {
+
     }
 
     void BlockStart(InputAction.CallbackContext context) {
