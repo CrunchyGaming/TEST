@@ -15,12 +15,21 @@ public class EnemyHealth : MonoBehaviour
     {
         enemyHealth -= damage;
         UpdateHeatlhBar();
+
+        if (enemyHealth <= 0) {
+            Die();
+        }
+
     }
 
     public void EnemyHeal(float health)
     {
         enemyHealth += health;
         UpdateHeatlhBar();
+    }
+
+    void Die() {
+        Destroy(gameObject);
     }
 
     void UpdateHeatlhBar()

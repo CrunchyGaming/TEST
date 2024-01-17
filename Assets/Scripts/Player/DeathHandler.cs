@@ -6,13 +6,13 @@ public class DeathHandler : MonoBehaviour
 {
 
     //[SerializeField] Canvas gameOverCanvas;
-    PlayerMovement playerControls;
+    PlayerControls playerControls;
 
 
 
     void Start() {
 
-        playerControls = GetComponent<PlayerMovement>();
+        playerControls = GetComponent<PlayerControls>();
         playerControls.enabled = true;
         //gameOverCanvas.enabled = false;
 
