@@ -19,6 +19,7 @@ public class PlayerControls : MonoBehaviour
     Vector2 moveDirection = Vector2.zero;
     CharacterController characterController;
     EnemyHealth enemyHealth;
+    HandleRanged handleRanged;
     Animator animator;
     bool isSprinting = false;
     bool isCrouching = false;
@@ -39,6 +40,7 @@ public class PlayerControls : MonoBehaviour
     void Awake() {
         playerControls = new PlayerInput();
         characterController = GetComponent<CharacterController>();
+        handleRanged = GetComponent<HandleRanged>();
         animator = GetComponent<Animator>();
         isBlocking = false;
     }
@@ -146,6 +148,7 @@ public class PlayerControls : MonoBehaviour
     void FireStart(InputAction.CallbackContext context) {
         animator.SetBool("attack", true);
         isAttacking = true;
+        handleRanged.DisableInd();
     }
 
     void FireEnd(InputAction.CallbackContext context) {

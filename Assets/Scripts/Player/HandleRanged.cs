@@ -10,21 +10,22 @@ public class HandleRanged : MonoBehaviour
     [SerializeField] float attackRange = 5f;
     public Renderer rangeRend;
     public GameObject rangeInd;
-    void Start()
-    {
+    [SerializeField] LayerMask targetLayer;
 
-    }
+    bool canShoot = false;
 
     void Update()
     {
         ProcessRange();
     }
 
-    void ProcessRange()
+    void ProcessRange() 
     {
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-        if (Physics.Raycast(ray, out RaycastHit hit)) 
-        {
+        RaycastHit hit;
+
+        // Perform the raycast with the specified layerMask
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, targetLayer)) {
             Vector3 mousePosition = hit.point;
             mousePosition.y = transform.position.y;
 
@@ -32,14 +33,21 @@ public class HandleRanged : MonoBehaviour
         }
 
         float distanceFromPlayer = Vector3.Distance(gameObject.transform.position, rangeInd.transform.position);
-        if(distanceFromPlayer >= attackRange)
-        {
+        if (distanceFromPlayer >= attackRange) {
             rangeRend.material.color = new Color(255f, 0f, 0f);
-        }
-        else
-        {
+        } else {
             rangeRend.material.color = new Color(0f, 255f, 0f);
         }
+    }
+
+    public void EnableInd()
+    {
+        rangeInd.SetActive(true);
+    }
+
+    public void DisableInd()
+    {
+        rangeInd.SetActive(false);
     }
 
 }
