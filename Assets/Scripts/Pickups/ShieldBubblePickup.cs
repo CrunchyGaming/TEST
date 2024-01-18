@@ -8,6 +8,8 @@ public class ShieldBubblePickup : MonoBehaviour
 
     [SerializeField] float shieldTimer = 10f;
     float shieldTimerSpeed = 1f;
+    int shieldCount = 0;
+    bool tickDownRunning = false;
     GameObject player;
     GameObject shieldBubble;
     GameObject canvas;
@@ -39,20 +41,29 @@ public class ShieldBubblePickup : MonoBehaviour
             shieldSlider.value = shieldTimerSpeed;
             
             
-
+            if(shieldCount == 1)
+            {
+                StopCoroutine(ShieldTimer());
+                StopCoroutine(TickDownShieldTime());
+            }
 
             StartCoroutine(ShieldTimer());
             StartCoroutine(TickDownShieldTime());
+
             meshRenderer.enabled = false;
             boxCollider.enabled = false;
+
+            shieldCount++;
 
         }
     }
 
     IEnumerator ShieldTimer() {
         yield return new WaitForSeconds(shieldTimer);
-
-        DisableShield();
+        if(shieldSlider.value <= 0)
+        {
+            DisableShield();
+        }
     }
 
     IEnumerator TickDownShieldTime()
@@ -60,6 +71,7 @@ public class ShieldBubblePickup : MonoBehaviour
         shieldTimerSpeed--;
         shieldSlider.value = shieldTimerSpeed;
         yield return new WaitForSeconds(1f);
+        Debug.Log(tickDownRunning);
         StartCoroutine(TickDownShieldTime());
     }
 
