@@ -656,7 +656,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minPlayerDistance: 1.5
+  fleaDistance: 3
   player: {fileID: 0}
+  canTrackPlayer: 1
 --- !u!114 &4400851581884190685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,4 +685,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 100
+  timeToHeal: 8
   healthSlider: {fileID: 2893545037670886616}
