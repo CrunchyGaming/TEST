@@ -27,7 +27,7 @@ public class EnemyAttack : MonoBehaviour
 
         if (isBlocking == true) {
             return;
-        } else if (isBlocking == false) {
+        } else if (isBlocking == false && playerHealth.isActiveAndEnabled) {
             playerHealth.TakeDamage(damageAmount);
         } else {
             return;
