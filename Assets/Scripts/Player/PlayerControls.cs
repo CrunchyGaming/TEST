@@ -14,7 +14,6 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float crouchSpeed = 2.5f;
     [SerializeField] float blockSpeed = 2.5f;
     [SerializeField] float rotationSpeed = 5f;
-    [SerializeField] float attackRange = 3f;
     Vector3 playerScale = new Vector3(1, 1, 1);
     Vector3 crouchScale = new Vector3(1, 0.5f, 1);
     Vector2 moveDirection = Vector2.zero;
@@ -24,6 +23,7 @@ public class PlayerControls : MonoBehaviour
     bool isSprinting = false;
     bool isCrouching = false;
     bool isLooking = false;
+    public bool isAttacking { get; private set; }
     public bool isBlocking { get; private set; }
 
     PlayerInput playerControls;
@@ -145,10 +145,12 @@ public class PlayerControls : MonoBehaviour
 
     void FireStart(InputAction.CallbackContext context) {
         animator.SetBool("attack", true);
+        isAttacking = true;
     }
 
     void FireEnd(InputAction.CallbackContext context) {
         animator.SetBool("attack", false);
+        isAttacking = false;
     }
 
     void BlockStart(InputAction.CallbackContext context) {

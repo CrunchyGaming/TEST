@@ -5,7 +5,6 @@ using UnityEngine;
 public class ShieldBubblePickup : MonoBehaviour
 {
 
-    [SerializeField] float healthAmount = 20f;
     GameObject player;
     GameObject shieldBubble;
 
@@ -20,10 +19,23 @@ public class ShieldBubblePickup : MonoBehaviour
             shieldBubble = player.transform.Find("ShieldBubble").gameObject;
             shieldBubble.SetActive(true);
 
+            StartCoroutine(ShieldTimer());
             Destroy(this.gameObject);
 
         }
     }
 
+    IEnumerator ShieldTimer() {
+
+        yield return new WaitForSeconds(10f);
+
+        DisableShield();
+
+    }
+
+    void DisableShield() {
+        player.GetComponent<PlayerHealth>().enabled = true;
+        shieldBubble?.SetActive(false);
+    }
 
 }
