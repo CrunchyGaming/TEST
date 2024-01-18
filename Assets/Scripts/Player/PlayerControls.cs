@@ -5,8 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class PlayerControls : MonoBehaviour
-{
+public class PlayerControls : MonoBehaviour {
 
     [Header("Settings")]
     [SerializeField] float moveSpeed = 5f;
@@ -14,12 +13,12 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float crouchSpeed = 2.5f;
     [SerializeField] float blockSpeed = 2.5f;
     [SerializeField] float rotationSpeed = 5f;
+    [SerializeField] LayerMask targetLayer;
     Vector3 playerScale = new Vector3(1, 1, 1);
     Vector3 crouchScale = new Vector3(1, 0.5f, 1);
     Vector2 moveDirection = Vector2.zero;
     CharacterController characterController;
     EnemyHealth enemyHealth;
-    HandleRanged handleRanged;
     Animator animator;
     bool isSprinting = false;
     bool isCrouching = false;
@@ -40,7 +39,6 @@ public class PlayerControls : MonoBehaviour
     void Awake() {
         playerControls = new PlayerInput();
         characterController = GetComponent<CharacterController>();
-        handleRanged = GetComponent<HandleRanged>();
         animator = GetComponent<Animator>();
         isBlocking = false;
     }
@@ -111,7 +109,9 @@ public class PlayerControls : MonoBehaviour
 
         if (isLooking) {
             Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-            if (Physics.Raycast(ray, out RaycastHit hit)) {
+
+            // Perform the raycast with the specified layerMask
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, targetLayer)) {
                 Vector3 mousePosition = hit.point;
                 mousePosition.y = transform.position.y;
 
@@ -124,7 +124,22 @@ public class PlayerControls : MonoBehaviour
             }
         }
 
-            bool isMoving = moveDirection.magnitude > 0.1f;
+        /*if (isLooking) {
+            Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+            if (Physics.Raycast(ray, out RaycastHit hit)) {
+                Vector3 mousePosition = hit.point;
+                mousePosition.y = transform.position.y;
+
+                transform.LookAt(mousePosition);
+            }
+        } else {
+            if (moveDirection != Vector2.zero) {
+                Quaternion targetRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.y));
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
+        }*/
+
+        bool isMoving = moveDirection.magnitude > 0.1f;
     }
 
 
@@ -148,7 +163,6 @@ public class PlayerControls : MonoBehaviour
     void FireStart(InputAction.CallbackContext context) {
         animator.SetBool("attack", true);
         isAttacking = true;
-        handleRanged.DisableInd();
     }
 
     void FireEnd(InputAction.CallbackContext context) {
