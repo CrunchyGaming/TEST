@@ -53,7 +53,7 @@ public class EnemyMovement : MonoBehaviour
     public void Flea()
     {
         canTrackPlayer = false;
-        agent.destination = player.transform.position + new Vector3(Random.Range(-20.0f, 20.0f), 0, Random.Range(-20.0f, 20.0f));
+        agent.destination = player.transform.position + new Vector3(Random.Range(10.0f, 20.0f) * Random.Range(-1f, 1f), 0, Random.Range(10.0f, 20.0f) * Random.Range(-1f, 1f));
     }
 
 }
