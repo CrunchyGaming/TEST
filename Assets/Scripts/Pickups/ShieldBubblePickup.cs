@@ -5,8 +5,11 @@ using UnityEngine;
 public class ShieldBubblePickup : MonoBehaviour
 {
 
+    [SerializeField] float shieldTimer = 10f;
     GameObject player;
     GameObject shieldBubble;
+    GameObject canvas;
+    GameObject shieldBubbleUI;
     MeshRenderer meshRenderer;
     BoxCollider boxCollider;
 
@@ -25,6 +28,10 @@ public class ShieldBubblePickup : MonoBehaviour
             shieldBubble = player.transform.Find("ShieldBubble").gameObject;
             shieldBubble.SetActive(true);
 
+            canvas = player.transform.Find("Canvas").gameObject;
+            shieldBubbleUI = canvas.transform.Find("ShieldSlider").gameObject;
+            shieldBubbleUI.SetActive(true);
+
             StartCoroutine(ShieldTimer());
             meshRenderer.enabled = false;
             boxCollider.enabled = false;
@@ -33,7 +40,7 @@ public class ShieldBubblePickup : MonoBehaviour
     }
 
     IEnumerator ShieldTimer() {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(shieldTimer);
 
         DisableShield();
     }
@@ -41,10 +48,13 @@ public class ShieldBubblePickup : MonoBehaviour
     void DisableShield() {
         player.GetComponent<PlayerHealth>().enabled = true;
 
-        shieldBubble = player.transform.Find("ShieldBubble").gameObject;
+        canvas = player.transform.Find("Canvas").gameObject;
+        shieldBubbleUI = canvas.transform.Find("ShieldSlider").gameObject;
+        shieldBubbleUI.SetActive(false);
 
         if (shieldBubble != null) {
             shieldBubble.SetActive(false);
+            shieldBubbleUI.SetActive(false);
         }
 
         Destroy(this.gameObject);
