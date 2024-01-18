@@ -36,12 +36,6 @@ public class EnemyHealth : MonoBehaviour
 
     }
 
-    public void EnemyHeal(float health)
-    {
-        enemyHealth += health;
-        UpdateHeatlhBar();
-    }
-
     void Die() {
         Destroy(gameObject);
     }

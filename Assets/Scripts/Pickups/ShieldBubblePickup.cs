@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShieldBubblePickup : MonoBehaviour
 {
 
     [SerializeField] float shieldTimer = 10f;
+    float shieldTimerSpeed = 1f;
     GameObject player;
     GameObject shieldBubble;
     GameObject canvas;
+    Slider shieldSlider;
     GameObject shieldBubbleUI;
     MeshRenderer meshRenderer;
     BoxCollider boxCollider;
@@ -30,9 +33,16 @@ public class ShieldBubblePickup : MonoBehaviour
 
             canvas = player.transform.Find("Canvas").gameObject;
             shieldBubbleUI = canvas.transform.Find("ShieldSlider").gameObject;
+            shieldSlider = shieldBubbleUI.GetComponent<Slider>();
             shieldBubbleUI.SetActive(true);
+            shieldTimerSpeed = shieldTimer;
+            shieldSlider.value = shieldTimerSpeed;
+            
+            
+
 
             StartCoroutine(ShieldTimer());
+            StartCoroutine(TickDownShieldTime());
             meshRenderer.enabled = false;
             boxCollider.enabled = false;
 
@@ -43,6 +53,14 @@ public class ShieldBubblePickup : MonoBehaviour
         yield return new WaitForSeconds(shieldTimer);
 
         DisableShield();
+    }
+
+    IEnumerator TickDownShieldTime()
+    {
+        shieldTimerSpeed--;
+        shieldSlider.value = shieldTimerSpeed;
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(TickDownShieldTime());
     }
 
     void DisableShield() {
