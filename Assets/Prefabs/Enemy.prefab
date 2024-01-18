@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minPlayerDistance: 1.5
-  fleaDistance: 3
+  trackPlayerDistance: 14
   player: {fileID: 0}
   canTrackPlayer: 1
 --- !u!114 &4400851581884190685

@@ -8,7 +8,9 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] float minPlayerDistance = 1.5f;
-    [SerializeField] GameObject player;
+    [SerializeField] float trackPlayerDistance = 14f;
+    GameObject player;
+    int ranNum;
     Animator animator;
     Vector3 targetPos;
 
@@ -20,6 +22,7 @@ public class EnemyMovement : MonoBehaviour
 
 
     void Start() {
+        player = FindObjectOfType<PlayerControls>().gameObject;
         animator = GetComponent<Animator>();    
         agent = GetComponent<NavMeshAgent>();
         enemyHealth = GetComponent<EnemyHealth>();
@@ -28,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
     void Update() {
         MoveEnemy();
     }
-
+    
     void MoveEnemy()
     {
         //
@@ -37,7 +40,7 @@ public class EnemyMovement : MonoBehaviour
         //
 
         float playerDistance = Vector3.Distance(gameObject.transform.position, player.transform.position);
-        if(canTrackPlayer)
+        if(canTrackPlayer && playerDistance <= trackPlayerDistance)
         {
             agent.destination = player.transform.position;
         }
@@ -53,7 +56,12 @@ public class EnemyMovement : MonoBehaviour
     public void Flea()
     {
         canTrackPlayer = false;
-        agent.destination = player.transform.position + new Vector3(Random.Range(10.0f, 20.0f) * Random.Range(-1f, 1f), 0, Random.Range(10.0f, 20.0f) * Random.Range(-1f, 1f));
+        ranNum = Random.Range(-1, 1);
+        if(ranNum == 0)
+        {
+            ranNum++;
+        }
+        agent.destination = player.transform.position + new Vector3(Random.Range(10.0f, 20.0f) * ranNum, 0, Random.Range(10.0f, 20.0f) * ranNum);
     }
 
 }
