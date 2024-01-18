@@ -7,10 +7,16 @@ public class ShieldBubblePickup : MonoBehaviour
 
     GameObject player;
     GameObject shieldBubble;
+    MeshRenderer meshRenderer;
+    BoxCollider boxCollider;
 
 
 
-    //change the number to be whatever index the shieldBubble is
+    void Start() {
+        meshRenderer = GetComponent<MeshRenderer>();
+        boxCollider = GetComponent<BoxCollider>();
+    }
+
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             player = other.gameObject;
@@ -20,22 +26,28 @@ public class ShieldBubblePickup : MonoBehaviour
             shieldBubble.SetActive(true);
 
             StartCoroutine(ShieldTimer());
-            Destroy(this.gameObject);
+            meshRenderer.enabled = false;
+            boxCollider.enabled = false;
 
         }
     }
 
     IEnumerator ShieldTimer() {
-
         yield return new WaitForSeconds(10f);
 
         DisableShield();
-
     }
 
     void DisableShield() {
         player.GetComponent<PlayerHealth>().enabled = true;
-        shieldBubble?.SetActive(false);
+
+        shieldBubble = player.transform.Find("ShieldBubble").gameObject;
+
+        if (shieldBubble != null) {
+            shieldBubble.SetActive(false);
+        }
+
+        Destroy(this.gameObject);
     }
 
 }

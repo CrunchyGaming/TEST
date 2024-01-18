@@ -8,7 +8,6 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] float minPlayerDistance = 1.5f;
-    [SerializeField] float fleaDistance = 3f;
     [SerializeField] GameObject player;
     Animator animator;
     Vector3 targetPos;
