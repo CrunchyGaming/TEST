@@ -14,7 +14,6 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float crouchSpeed = 2.5f;
     [SerializeField] float blockSpeed = 2.5f;
     [SerializeField] float rotationSpeed = 5f;
-    [SerializeField] float playerDamage = 50f;
     [SerializeField] float attackRange = 3f;
     Vector3 playerScale = new Vector3(1, 1, 1);
     Vector3 crouchScale = new Vector3(1, 0.5f, 1);
