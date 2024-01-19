@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4053270447814567488}
   - component: {fileID: 3047581028003341397}
   - component: {fileID: 7961399329149831275}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4842,7 +4842,7 @@ GameObject:
   - component: {fileID: 7332796438548383224}
   - component: {fileID: 8689893455324496362}
   - component: {fileID: 269040294677239282}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: damageArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
