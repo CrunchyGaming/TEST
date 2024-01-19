@@ -328,6 +328,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hotbar
       objectReference: {fileID: 0}
+    - target: {fileID: 1796949404549393817, guid: e627db1a965297a4e9c5f51da9e4eacd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1356594398}
+    - target: {fileID: 1796949404549393817, guid: e627db1a965297a4e9c5f51da9e4eacd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnButtonOn
+      objectReference: {fileID: 0}
     - target: {fileID: 2523931155378576321, guid: e627db1a965297a4e9c5f51da9e4eacd,
         type: 3}
       propertyPath: m_Pivot.x
@@ -724,6 +734,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2711361031336150559}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1356594398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8163160842230852477, guid: 67ada836a0aa8d1428ee139e002d5a5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2711361031336150559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356594397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eecfe6433a37ab84aa11a5167ee25ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1739749420
 GameObject:
   m_ObjectHideFlags: 0

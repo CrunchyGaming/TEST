@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47ee82b2c2f0214483228ac55975ec2, type: 3}
+  m_Name: Inventory Item_DamagePotion
+  m_EditorClassIdentifier: 
+  id: InventoryItem_DamagePotion
+  displayName: Damage Potion
+  icon: {fileID: 21300000, guid: c4167d7efa06db244a112073a2c3daec, type: 3}
+  prefab: {fileID: 8440460055676598543, guid: 4fe62dc67833b88439922ad05ab73715, type: 3}
