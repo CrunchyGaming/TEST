@@ -18,6 +18,7 @@ public class PlayerControls : MonoBehaviour {
     Vector3 crouchScale = new Vector3(1, 0.5f, 1);
     Vector2 moveDirection = Vector2.zero;
     CharacterController characterController;
+    HandleRanged handleRanged;
     EnemyHealth enemyHealth;
     Animator animator;
     bool isSprinting = false;
@@ -39,6 +40,7 @@ public class PlayerControls : MonoBehaviour {
     void Awake() {
         playerControls = new PlayerInput();
         characterController = GetComponent<CharacterController>();
+        handleRanged = GetComponent<HandleRanged>();
         animator = GetComponent<Animator>();
         isBlocking = false;
     }
@@ -162,6 +164,7 @@ public class PlayerControls : MonoBehaviour {
 
     void FireStart(InputAction.CallbackContext context) {
         animator.SetBool("attack", true);
+        handleRanged.DisableInd();
         isAttacking = true;
     }
 
@@ -179,10 +182,12 @@ public class PlayerControls : MonoBehaviour {
     }
 
     void LookStart(InputAction.CallbackContext context) {
+        handleRanged.EnableInd();
         isLooking = true;
     }
 
     void LookEnd(InputAction.CallbackContext context) {
+        handleRanged.DisableIndWithoutFiring();
         isLooking = false;
     }
 
