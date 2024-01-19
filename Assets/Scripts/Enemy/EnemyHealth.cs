@@ -36,6 +36,11 @@ public class EnemyHealth : MonoBehaviour
 
     }
 
+    public bool IsAlive()
+    {
+        return enemyHealth > 0;
+    }
+
     void Die() {
         Destroy(gameObject);
     }
