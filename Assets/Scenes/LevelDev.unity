@@ -196,6 +196,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1384677343462595100, guid: 8313f73e6e6ebaa4aae645c4421197c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -273,6 +278,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock2 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173611336790147491, guid: b14cc9b1f0f0fa442a69002c197b12dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -369,6 +379,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1384677343462595100, guid: 8313f73e6e6ebaa4aae645c4421197c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -495,7 +510,7 @@ GameObject:
   - component: {fileID: 218941284}
   m_Layer: 0
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -616,74 +631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecfe6433a37ab84aa11a5167ee25ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &352221696
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8440460055676598543, guid: 4fe62dc67833b88439922ad05ab73715,
-        type: 3}
-      propertyPath: m_Name
-      value: DamagePotion
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108909714867643317, guid: 4fe62dc67833b88439922ad05ab73715,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 18.31231
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108909714867643317, guid: 4fe62dc67833b88439922ad05ab73715,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0000009536743
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108909714867643317, guid: 4fe62dc67833b88439922ad05ab73715,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.4480066
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108909714867643317, guid: 4fe62dc67833b88439922ad05ab73715,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108909714867643317, guid: 4fe62dc67833b88439922ad05ab73715,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108909714867643317, guid: 4fe62dc67833b88439922ad05ab73715,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108909714867643317, guid: 4fe62dc67833b88439922ad05ab73715,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108909714867643317, guid: 4fe62dc67833b88439922ad05ab73715,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 270
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108909714867643317, guid: 4fe62dc67833b88439922ad05ab73715,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108909714867643317, guid: 4fe62dc67833b88439922ad05ab73715,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4fe62dc67833b88439922ad05ab73715, type: 3}
 --- !u!1 &380322131
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,7 +750,7 @@ GameObject:
   - component: {fileID: 408911015}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -962,6 +909,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1384677343462595100, guid: 8313f73e6e6ebaa4aae645c4421197c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1035,6 +987,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock1
       objectReference: {fileID: 0}
+    - target: {fileID: 1384677343462595100, guid: 8313f73e6e6ebaa4aae645c4421197c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1060,7 +1017,7 @@ GameObject:
   - component: {fileID: 531249084}
   m_Layer: 0
   m_Name: Cube (12)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1165,7 +1122,7 @@ GameObject:
   - component: {fileID: 578682552}
   m_Layer: 0
   m_Name: Cube (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1319,6 +1276,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1384677343462595100, guid: 8313f73e6e6ebaa4aae645c4421197c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1392,6 +1354,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173611336790147491, guid: b14cc9b1f0f0fa442a69002c197b12dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1467,6 +1434,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5003177821180993593, guid: 112f5326ff1419d4fb772b141557e296,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1538,6 +1510,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173611336790147491, guid: b14cc9b1f0f0fa442a69002c197b12dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1720,6 +1697,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1384677343462595100, guid: 8313f73e6e6ebaa4aae645c4421197c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1739,7 +1721,7 @@ GameObject:
   - component: {fileID: 964976744}
   m_Layer: 0
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1893,11 +1875,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Pickup
       objectReference: {fileID: 0}
-    - target: {fileID: 8384363925979549884, guid: d3bf3f83bcf81ed4aaed06905c96e1e5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1923,7 +1900,7 @@ GameObject:
   - component: {fileID: 1067122378}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2034,7 +2011,7 @@ GameObject:
   - component: {fileID: 1078528052}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2188,6 +2165,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock2
       objectReference: {fileID: 0}
+    - target: {fileID: 3173611336790147491, guid: b14cc9b1f0f0fa442a69002c197b12dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2255,6 +2237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock2 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173611336790147491, guid: b14cc9b1f0f0fa442a69002c197b12dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2336,6 +2323,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock2 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3173611336790147491, guid: b14cc9b1f0f0fa442a69002c197b12dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2413,6 +2405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1384677343462595100, guid: 8313f73e6e6ebaa4aae645c4421197c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2492,6 +2489,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3173611336790147491, guid: b14cc9b1f0f0fa442a69002c197b12dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2511,7 +2513,7 @@ GameObject:
   - component: {fileID: 1249262672}
   m_Layer: 0
   m_Name: Cube (15)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2665,6 +2667,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder
       objectReference: {fileID: 0}
+    - target: {fileID: 5003177821180993593, guid: 112f5326ff1419d4fb772b141557e296,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2694,7 +2701,7 @@ GameObject:
   - component: {fileID: 1314638362}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2799,7 +2806,7 @@ GameObject:
   - component: {fileID: 1314868304}
   m_Layer: 0
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2904,7 +2911,7 @@ GameObject:
   - component: {fileID: 1366028006}
   m_Layer: 0
   m_Name: Cube (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3015,7 +3022,7 @@ GameObject:
   - component: {fileID: 1422265582}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3252,16 +3259,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 7411617528425329364, guid: b782f82e7d9957a4bb924c0c3447a78a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8975804953742938747, guid: b782f82e7d9957a4bb924c0c3447a78a,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 309069637}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3336,57 +3333,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6115186902189637246, guid: 67ada836a0aa8d1428ee139e002d5a5e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6505925263631782992, guid: 67ada836a0aa8d1428ee139e002d5a5e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.4178568
+      value: 0.41785678
       objectReference: {fileID: 0}
     - target: {fileID: 6505925263631782992, guid: 67ada836a0aa8d1428ee139e002d5a5e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000270758
+      value: 0.000000011215161
       objectReference: {fileID: 0}
     - target: {fileID: 6505925263631782992, guid: 67ada836a0aa8d1428ee139e002d5a5e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000012453105
+      value: -0.000000005158246
       objectReference: {fileID: 0}
     - target: {fileID: 7271627731524115682, guid: 67ada836a0aa8d1428ee139e002d5a5e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.4178568
+      value: 0.41785678
       objectReference: {fileID: 0}
     - target: {fileID: 7271627731524115682, guid: 67ada836a0aa8d1428ee139e002d5a5e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000270758
+      value: 0.000000011215161
       objectReference: {fileID: 0}
     - target: {fileID: 7271627731524115682, guid: 67ada836a0aa8d1428ee139e002d5a5e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000012453105
+      value: -0.000000005158246
       objectReference: {fileID: 0}
-    - target: {fileID: 8163160842230852477, guid: 67ada836a0aa8d1428ee139e002d5a5e,
-        type: 3}
-      propertyPath: powerZ
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 8163160842230852477, guid: 67ada836a0aa8d1428ee139e002d5a5e,
-        type: 3}
-      propertyPath: attackRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8163160842230852477, guid: 67ada836a0aa8d1428ee139e002d5a5e,
-        type: 3}
-      propertyPath: damagePotion
-      value: 
-      objectReference: {fileID: 8440460055676598543, guid: 4fe62dc67833b88439922ad05ab73715,
-        type: 3}
     - target: {fileID: 8852634023390948297, guid: 67ada836a0aa8d1428ee139e002d5a5e,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -3637,7 +3613,7 @@ Transform:
   m_GameObject: {fileID: 1576838659}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.642929, y: -11.006971, z: 10.135401}
+  m_LocalPosition: {x: 7.642929, y: -11.13, z: 10.135401}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3730,7 +3706,7 @@ GameObject:
   - component: {fileID: 1583176745}
   m_Layer: 0
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3893,6 +3869,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock2 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173611336790147491, guid: b14cc9b1f0f0fa442a69002c197b12dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4057,7 +4038,7 @@ GameObject:
   - component: {fileID: 1907002585}
   m_Layer: 0
   m_Name: Cube (13)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4162,7 +4143,7 @@ GameObject:
   - component: {fileID: 1931491099}
   m_Layer: 0
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4332,6 +4313,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1384677343462595100, guid: 8313f73e6e6ebaa4aae645c4421197c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4620,5 +4606,4 @@ SceneRoots:
   - {fileID: 2565508021402195014}
   - {fileID: 1267595943}
   - {fileID: 852503409}
-  - {fileID: 352221696}
   - {fileID: 580969724889834478}

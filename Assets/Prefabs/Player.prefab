@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955694834029467736}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4178568, y: 0.0000000270758, z: -0.000000012453105, w: 0.90851295}
+  m_LocalRotation: {x: 0.41785684, y: -9.6769934e-17, z: 3.4975507e-16, w: 0.90851295}
   m_LocalPosition: {x: 0, y: 15, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1824319941158602059}
   - component: {fileID: 6657234382272293130}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 375975412086503638}
   - component: {fileID: 4849300231505917453}
   - component: {fileID: 1473603688196334639}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 446606654978850967}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2602170225038935883}
   - component: {fileID: 751619045404592220}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ShieldSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 8852634023390948297}
   - component: {fileID: 6297289306439358183}
   - component: {fileID: 5918866431339986758}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,9 +729,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecfe6433a37ab84aa11a5167ee25ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 5
+  attackRange: 10
+  powerZ: 0.45
+  powerY: 1
   rangeRend: {fileID: 3297906023567817256}
   rangeInd: {fileID: 4730784346595442625}
+  damagePotion: {fileID: 8440460055676598543, guid: 4fe62dc67833b88439922ad05ab73715,
+    type: 3}
   targetLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -781,7 +785,7 @@ GameObject:
   - component: {fileID: 4157526642534533709}
   m_Layer: 0
   m_Name: Face
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -895,7 +899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1975216830878599847}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -966,7 +970,6 @@ GameObject:
   - component: {fileID: 5077868952386223186}
   - component: {fileID: 7083824055335429616}
   - component: {fileID: 5974612985410532729}
-  - component: {fileID: 7885199784559017493}
   m_Layer: 0
   m_Name: ShieldBubble
   m_TagString: Untagged
@@ -1039,27 +1042,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7885199784559017493
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7841755780891805413}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7991903593821358560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,7 +1232,7 @@ GameObject:
   - component: {fileID: 3225665938636665782}
   - component: {fileID: 8774457841325779873}
   - component: {fileID: 6511215298612899182}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1369,7 +1351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8617614402333986270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4178568, y: 0.0000000270758, z: -0.000000012453105, w: 0.90851295}
+  m_LocalRotation: {x: 0.41785684, y: -9.6769934e-17, z: 3.4975507e-16, w: 0.90851295}
   m_LocalPosition: {x: 0, y: 15, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

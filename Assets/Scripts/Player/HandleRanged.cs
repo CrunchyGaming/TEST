@@ -65,7 +65,7 @@ public class HandleRanged : MonoBehaviour
         {
             isButtonOn = false;
             GameObject clone;
-            clone = Instantiate(damagePotion, transform.position + new Vector3(0, 2f, 0), transform.rotation);
+            clone = Instantiate(damagePotion, transform.position + new Vector3(0, 2f, 0), transform.rotation * new Quaternion(0f, 90f, 90f, 0f));
             shotPowerZ = powerZ * distanceFromPlayer;
             shotPowerY = powerY * distanceFromPlayer;
             clone.GetComponent<Rigidbody>().velocity = transform.TransformDirection(0, shotPowerY, shotPowerZ);
