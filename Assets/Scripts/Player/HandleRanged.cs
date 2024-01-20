@@ -13,6 +13,7 @@ public class HandleRanged : MonoBehaviour
     public Renderer rangeRend;
     public GameObject rangeInd;
     public GameObject damagePotion;
+    public GameObject potionUISelector;
     [SerializeField] LayerMask targetLayer;
 
 
@@ -20,7 +21,7 @@ public class HandleRanged : MonoBehaviour
     float shotPowerZ;
     float shotPowerY;
     bool canShoot = false;
-    bool isButtonOn = false;
+    public bool isPotionButtonOn = false;
 
     void Update()
     {
@@ -53,7 +54,7 @@ public class HandleRanged : MonoBehaviour
 
     public void EnableInd()
     {
-        if(isButtonOn)
+        if(isPotionButtonOn)
         {
             rangeInd.SetActive(true);
         }
@@ -63,7 +64,8 @@ public class HandleRanged : MonoBehaviour
     {
         if(rangeInd.active == true && canShoot)
         {
-            isButtonOn = false;
+            isPotionButtonOn = false;
+            potionUISelector.SetActive(false);
             GameObject clone;
             clone = Instantiate(damagePotion, transform.position + new Vector3(0, 2f, 0), transform.rotation * new Quaternion(0f, 90f, 90f, 0f));
             shotPowerZ = powerZ * distanceFromPlayer;
@@ -79,20 +81,25 @@ public class HandleRanged : MonoBehaviour
     {
         if(rangeInd.active == true)
         {
-            isButtonOn = false;
+            isPotionButtonOn = false;
             rangeInd.SetActive(false);
         }
     }
 
-    public void TurnButtonOn()
+    public void TogglePotionButton()
     {
-        if(isButtonOn)
+        if(isPotionButtonOn)
         {
-            isButtonOn = false;
+            isPotionButtonOn = false;
         }
-        else if(!isButtonOn)
+        else if(!isPotionButtonOn)
         {
-            isButtonOn = true;
+            isPotionButtonOn = true;
         }
+    }
+
+    public void PotionButtonOff()
+    {
+        isPotionButtonOn = false;
     }
 }

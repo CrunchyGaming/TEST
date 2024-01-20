@@ -26,6 +26,7 @@ public class PlayerControls : MonoBehaviour {
     bool isLooking = false;
     public bool isAttacking { get; private set; }
     public bool isBlocking { get; private set; }
+    public bool isAttackButtonOn;
 
     PlayerInput playerControls;
     InputAction move;
@@ -43,6 +44,7 @@ public class PlayerControls : MonoBehaviour {
         handleRanged = GetComponent<HandleRanged>();
         animator = GetComponent<Animator>();
         isBlocking = false;
+        isAttackButtonOn = false;
     }
 
     void OnEnable() {
@@ -163,9 +165,16 @@ public class PlayerControls : MonoBehaviour {
     }
 
     void FireStart(InputAction.CallbackContext context) {
-        animator.SetBool("attack", true);
-        handleRanged.DisableInd();
-        isAttacking = true;
+        if(!isBlocking && isAttackButtonOn && isLooking)
+        {
+            animator.SetBool("attack", true);
+            isAttacking = true;
+        }
+        if(handleRanged.isPotionButtonOn)
+        {
+            handleRanged.DisableInd();
+        }
+        
     }
 
     void FireEnd(InputAction.CallbackContext context) {
@@ -189,6 +198,23 @@ public class PlayerControls : MonoBehaviour {
     void LookEnd(InputAction.CallbackContext context) {
         handleRanged.DisableIndWithoutFiring();
         isLooking = false;
+    }
+
+    public void ToggleAttackButton()
+    {
+        if(isAttackButtonOn)
+        {
+            isAttackButtonOn = false;
+        }
+        else if(!isAttackButtonOn)
+        {
+            isAttackButtonOn = true;
+        }
+    }
+
+    public void AttackButtonOff()
+    {
+        isAttackButtonOn = false;
     }
 
 }

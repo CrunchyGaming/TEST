@@ -844,8 +844,43 @@ PrefabInstance:
       objectReference: {fileID: 1356594398}
     - target: {fileID: 1796949404549393817, guid: e627db1a965297a4e9c5f51da9e4eacd,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1356594402}
+    - target: {fileID: 1796949404549393817, guid: e627db1a965297a4e9c5f51da9e4eacd,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TurnButtonOn
+      value: TogglePotionButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796949404549393817, guid: e627db1a965297a4e9c5f51da9e4eacd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: AttackButtonOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056081207302514419, guid: e627db1a965297a4e9c5f51da9e4eacd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1356594402}
+    - target: {fileID: 2056081207302514419, guid: e627db1a965297a4e9c5f51da9e4eacd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1356594398}
+    - target: {fileID: 2056081207302514419, guid: e627db1a965297a4e9c5f51da9e4eacd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleAttackButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056081207302514419, guid: e627db1a965297a4e9c5f51da9e4eacd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PotionButtonOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056081207302514419, guid: e627db1a965297a4e9c5f51da9e4eacd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: HandleRanged, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2523931155378576321, guid: e627db1a965297a4e9c5f51da9e4eacd,
         type: 3}
@@ -1132,6 +1167,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1027988855}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1158381871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8738165490292827959, guid: e627db1a965297a4e9c5f51da9e4eacd,
+    type: 3}
+  m_PrefabInstance: {fileID: 891196269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1274151988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,6 +1294,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eecfe6433a37ab84aa11a5167ee25ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1356594402 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2908971698504494256, guid: 67ada836a0aa8d1428ee139e002d5a5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2711361031336150559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356594397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3891ea6de35904d89ac2e94b54b186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1511894343
@@ -1969,6 +2022,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -3.4975507e-16
       objectReference: {fileID: 0}
+    - target: {fileID: 8163160842230852477, guid: 67ada836a0aa8d1428ee139e002d5a5e,
+        type: 3}
+      propertyPath: potionUISelector
+      value: 
+      objectReference: {fileID: 1158381871}
     - target: {fileID: 8852634023390948297, guid: 67ada836a0aa8d1428ee139e002d5a5e,
         type: 3}
       propertyPath: m_AnchorMax.x
