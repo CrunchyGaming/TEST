@@ -23,7 +23,7 @@ public class PlayerControls : MonoBehaviour {
     Animator animator;
     bool isSprinting = false;
     bool isCrouching = false;
-    bool isLooking = false;
+    public bool isLooking = false;
     public bool isAttacking { get; private set; }
     public bool isBlocking { get; private set; }
     public bool isAttackButtonOn;

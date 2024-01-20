@@ -23,6 +23,13 @@ public class HandleRanged : MonoBehaviour
     bool canShoot = false;
     public bool isPotionButtonOn = false;
 
+    PlayerControls playerControls;
+
+    void Awake()
+    {
+        playerControls = GetComponent<PlayerControls>();
+    }
+
     void Update()
     {
         ProcessRange();
@@ -94,6 +101,10 @@ public class HandleRanged : MonoBehaviour
         else if(!isPotionButtonOn)
         {
             isPotionButtonOn = true;
+            if(playerControls.isLooking)
+            {
+                EnableInd();
+            }
         }
     }
 
