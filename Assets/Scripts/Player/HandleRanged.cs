@@ -81,7 +81,6 @@ public class HandleRanged : MonoBehaviour
     {
         if(rangeInd.active == true)
         {
-            isPotionButtonOn = false;
             rangeInd.SetActive(false);
         }
     }
