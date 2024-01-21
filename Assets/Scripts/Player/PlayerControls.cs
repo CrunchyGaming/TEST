@@ -185,6 +185,7 @@ public class PlayerControls : MonoBehaviour {
     }
 
     void BlockStart(InputAction.CallbackContext context) {
+        animator.SetBool("attack", false);
         isBlocking = true;
     }
 
@@ -199,6 +200,7 @@ public class PlayerControls : MonoBehaviour {
 
     void LookEnd(InputAction.CallbackContext context) {
         handleRanged.DisableIndWithoutFiring();
+        animator.SetBool("attack", false);
         isLooking = false;
     }
 
