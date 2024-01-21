@@ -97,6 +97,7 @@ public class HandleRanged : MonoBehaviour
         if(isPotionButtonOn)
         {
             isPotionButtonOn = false;
+            potionUISelector.SetActive(false);
         }
         else if(!isPotionButtonOn)
         {
@@ -105,6 +106,9 @@ public class HandleRanged : MonoBehaviour
             {
                 EnableInd();
             }
+            potionUISelector.SetActive(true);
+            playerControls.AttackButtonOff();
+            playerControls.attackUISelector.SetActive(false);
         }
     }
 

@@ -27,6 +27,7 @@ public class PlayerControls : MonoBehaviour {
     public bool isAttacking { get; private set; }
     public bool isBlocking { get; private set; }
     public bool isAttackButtonOn;
+    public GameObject attackUISelector;
 
     PlayerInput playerControls;
     InputAction move;
@@ -87,6 +88,7 @@ public class PlayerControls : MonoBehaviour {
 
     void Update() {
         handleMovement();
+        ProcessHotBar();
     }
 
     void handleMovement() {
@@ -205,10 +207,15 @@ public class PlayerControls : MonoBehaviour {
         if(isAttackButtonOn)
         {
             isAttackButtonOn = false;
+            attackUISelector.SetActive(false);
         }
         else if(!isAttackButtonOn)
         {
             isAttackButtonOn = true;
+            handleRanged.DisableIndWithoutFiring();
+            handleRanged.PotionButtonOff();
+            attackUISelector.SetActive(true);
+            handleRanged.potionUISelector.SetActive(false);
         }
     }
 
@@ -216,5 +223,20 @@ public class PlayerControls : MonoBehaviour {
     {
         isAttackButtonOn = false;
     }
+
+    void ProcessHotBar()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ToggleAttackButton();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            handleRanged.TogglePotionButton();
+        }
+        
+    }
+
+
 
 }
