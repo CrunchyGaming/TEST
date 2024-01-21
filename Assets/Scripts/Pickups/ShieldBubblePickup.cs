@@ -32,7 +32,7 @@ public class ShieldBubblePickup : MonoBehaviour
             shieldBubble = player.transform.Find("ShieldBubble").gameObject;
             shieldBubble.SetActive(true);
 
-            canvas = player.transform.Find("Canvas").gameObject;
+            canvas = player.transform.Find("Hotbar").gameObject;
             shieldBubbleUI = canvas.transform.Find("ShieldSlider").gameObject;
             shieldSlider = shieldBubbleUI.GetComponent<Slider>();
             shieldBubbleUI.SetActive(true);
@@ -67,7 +67,7 @@ public class ShieldBubblePickup : MonoBehaviour
         isShieldActive = false;
         player.GetComponent<PlayerHealth>().enabled = true;
 
-        canvas = player.transform.Find("Canvas").gameObject;
+        canvas = player.transform.Find("Hotbar").gameObject;
         shieldBubbleUI = canvas.transform.Find("ShieldSlider").gameObject;
         shieldBubbleUI.SetActive(false);
 

@@ -172,7 +172,7 @@ public class PlayerControls : MonoBehaviour {
             animator.SetBool("attack", true);
             isAttacking = true;
         }
-        if(handleRanged.isPotionButtonOn)
+        if(isLooking && handleRanged.isPotionButtonOn)
         {
             handleRanged.DisableInd();
         }
