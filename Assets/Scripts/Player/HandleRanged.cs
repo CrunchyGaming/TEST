@@ -69,7 +69,7 @@ public class HandleRanged : MonoBehaviour
 
     public void DisableInd()
     {
-        if(rangeInd.active == true && canShoot)
+        if(rangeInd == true && canShoot)
         {
             isPotionButtonOn = false;
             potionUISelector.SetActive(false);
@@ -86,7 +86,7 @@ public class HandleRanged : MonoBehaviour
 
     public void DisableIndWithoutFiring()
     {
-        if(rangeInd.active == true)
+        if(rangeInd == true)
         {
             rangeInd.SetActive(false);
         }
